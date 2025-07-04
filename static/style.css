@@ -1,0 +1,318 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('/static/anik1.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.navbar {
+  background-color:transparent;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  animation: slideDown 0.6s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  
+}
+
+.logo img {
+  height: 100px;
+  margin-right: 10px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.logo span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3ad1ff;
+  animation: glowText 1.5s infinite alternate;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a, .nav-links li button {
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 8px 14px;
+  transition: 0.3s ease;
+  border-radius: 5px;
+  position: relative;
+}
+
+.nav-links li a:hover, .nav-links li button:hover {
+  background-color: #2f3f53;
+  box-shadow: 0 0 12px #3ad1ff, 0 0 20px #3ad1ff;
+  transform: scale(1.05);
+}
+
+#aniket {
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.45); 
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+#niket {
+  font-size: 40px;
+  color: #1e2a38;
+  margin-left: 475px;
+  animation: glowText 2s infinite alternate;
+}
+
+.modal {
+  margin-top: 200px;
+  display: none;
+  position: fixed;
+  z-index: 10;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  animation: fadeIn 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  width: 70%;
+  max-width: 600px;
+  max-height: 80vh; 
+  overflow-y: auto;  
+  border-radius: 10px;
+  animation: popUp 0.5s ease-in-out;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  position: relative;
+  scrollbar-width: thin; 
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.close:hover {
+  color: red;
+  transform: scale(1.1);
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.10);  padding: 40px 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: slideUp 0.6s ease-out;
+}
+
+.container h1 {
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #3ad1ff;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.search-box input[type="file"] {
+  width: 70%;
+  padding: 14px 18px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+  background: rgba(255,255,255,0.8);
+  transition: border-color 0.3s ease;
+}
+
+.search-box input:focus {
+  border-color: #3ad1ff;
+}
+
+.search-box button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #3ad1ff;
+  animation: pulse 1.5s infinite;
+}
+
+.search-box button:hover {
+  box-shadow: 0 0 16px #3ad1ff, 0 0 24px #3ad1ff;
+  transform: scale(1.05);
+  background-color: #0056b3;
+}
+
+.loader {
+  margin-top: 20px;
+  width: 40px;
+  height: 40px;
+  border: 5px solid transparent;
+  border-top: 5px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: none;
+  background: none;
+}
+
+.result {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(234, 250, 241, 0.9);
+  border: 2px solid #2ecc71;
+  border-radius: 12px;
+  color: #2e7d32;
+  font-size: 20px;
+  font-weight: bold;
+  animation: fadeIn 0.8s ease;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .nav-links li {
+    width: 100%;
+  }
+  .nav-links li a, .nav-links li button {
+    width: 100%;
+    text-align: left;
+  }
+  #niket {
+    margin-left: 10px;
+    font-size: 30px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(60px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes slideDown {
+  0% { opacity: 0; transform: translateY(-60px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 8px #3ad1ff; }
+  50% { box-shadow: 0 0 18px #3ad1ff; }
+  100% { box-shadow: 0 0 8px #3ad1ff; }
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 6px #3ad1ff; }
+  to   { text-shadow: 0 0 14px #3ad1ff; }
+}
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  backdrop-filter: blur(4px); 
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease;
+  font-size: 16px;
+}
+
+.footer p:hover {
+  color: #3ad1ff;
+  transition: 0.3s ease;
+}
+
+.footer-btn {
+  margin-top: 10px;
+  padding: 10px 24px;
+  background-color: #3ad1ff;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  color: #1e2a38;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px #3ad1ff, 0 0 20px #3ad1ff;
+  transition: all 0.3s ease;
+}
+
+.footer-btn:hover {
+  background-color: #1e2a38;
+  color: #3ad1ff;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #3ad1ff, 0 0 30px #3ad1ff;
+}
+a{
+  text-decoration: none;
+}

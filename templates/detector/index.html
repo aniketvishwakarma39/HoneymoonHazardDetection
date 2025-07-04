@@ -1,0 +1,123 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Honeymoon Hazard Detection</title>
+<link rel="stylesheet" href="{% static 'style.css' %}"></head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="/static/hus.jpg" alt="Logo">
+      <span id="love">Honeymoon Hazard Detection</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="{% url 'aniket' %}">Emotion Detect</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><button onclick="showModal()">Prevention</button></li>
+    </ul>
+  </nav>
+  <nav class="navbar" id="aniket">
+     <div class="logo">
+      <img src="/static/avi.png" alt="Logo">
+      <span id="niket">Stay Safe & Feel Free!</span>
+    </div>
+
+  </nav>
+
+    <div class="container">
+    <h1>Honeymoon Hazard Detector</h1>
+
+    <form method="POST" action="">
+      {% csrf_token %}
+      <div class="search-box">
+        <input type="text" name="text" placeholder="Type your relationship issue..." required>
+        <button type="submit">Detect</button>
+      </div>
+    </form>
+
+    {% if result %}
+      <div class="result">
+        Prediction: {{ result }} <br>
+        Suggestion: {{ suggestion }}
+      </div>
+    {% endif %}
+
+    <div class="loader" id="loader"></div>
+  </div>
+
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>How to Prevent Relationship Hazards</h2>
+      <p>1. Set healthy boundaries<br>
+         2. Communicate openly and honestly<br>
+         3. Avoid manipulation and control<br>
+         4. Don’t tolerate abuse (mental or physical)<br>
+         5. Seek help if needed — you're not alone!<br>
+         6.Don’t ignore red flags (even small ones)<br>
+         7.Keep digital proof of important conversations<br>
+         8.Never be rushed into serious commitments<br>
+         9.Watch how they behave in anger<br>
+        10.Talk about financial transparency<br>
+        11.Share passwords only when trust is built<br>
+        12.Discuss long-term expectations (kids, career, etc.)<br>
+        13.Clarify relationship status and exclusivity<br>
+        14.how they behave around family and friends<br>
+        15.Never hesitate to say NO<br>
+        16.Observe jealousy or over-possessiveness<br>
+        17.Keep your individuality alive<br>
+        18.Don’t overshare too soon<br>
+        19.take enough time before marriage<br>
+        20.Check their behavior on social media<br>
+        21.Don't hide your doubts — speak up<br>
+        22.If you feel unsafe, leave immediately<br>
+        23.Value respect over charm<br>
+        24.Don't let love blind you from facts<br>
+        25.Hire a detective (if needed) before marriage<br>
+        26.Talk to their friends and exes if possible<br>
+        27.Keep an eye on hidden chats or calls<br>
+        28.Be careful with someone who always plays victim<br>
+        29.Don’t allow gaslighting — trust your gut<br>
+        30.Ask clearly: “Do you still talk to your ex?”<br>
+        31.Observe how they talk about their past partners<br>
+        32.Respect each other's privacy but not secrets<br>
+        33.Keep relationship progress slow and natural<br>
+        34.Take advice from trusted friends or family<br>
+        35.Avoid partners who isolate you from others<br>
+        36.Always meet in safe, public places initially<br>
+        37.Don’t tolerate inconsistent behavior<br>
+        38.Love should never make you feel scared<br>
+        39.Always record voice chats or video if you feel unsure (legally and respectfully)<br>
+
+
+      </p>
+    </div>
+  </div>
+  <footer class="footer">
+  <p>All rights reserved © NomadsSmith</p>
+  <button class="footer-btn" ><a href="{% url 'love' %}">last option</a></button>
+</footer>
+
+
+
+
+  <script>
+    function showModal() {
+      document.getElementById("modal").style.display = "block";
+    }
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+    window.onclick = function(event) {
+      let modal = document.getElementById("modal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html> 

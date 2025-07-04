@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎤 Voice Emotion Detector</title>
+  <link rel="stylesheet" href="{% static 'voice.css' %}">
+</head>
+<body>
+
+  <div class="container">
+    <h1>🎤 Detect Emotion from Voice</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="audio_file">Upload a <b>.wav</b> file:</label>
+      <input type="file" name="audio_file" accept=".wav" required>
+      <button type="submit" class="glow">Detect Emotion</button>
+    </form>
+
+    {% if emotion_result %}
+      <div class="result animate">
+        <h2>🎯 Detected Emotion:</h2>
+        <p>{{ emotion_result|capfirst }}</p>
+        <h3>🧠 Suggestion:</h3>
+        <p>{{ suggestion }}</p>
+      </div>
+    {% else %}
+      <div class="result animate">
+        <h2>No result yet</h2>
+        <p>Upload a .wav file and click detect.</p>
+      </div>
+    {% endif %}
+    <footer class="footer">
+  <p>All rights reserved © NomadsSmith</p>
+</footer>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('/static/anik.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.50);
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  animation: slideUp 0.6s ease-out;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+input[type="file"] {
+  margin: 20px 0;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="file"]:focus {
+  border-color: #3ad1ff;
+}
+
+button.glow {
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  box-shadow: 0 0 8px #3ad1ff;
+  animation: pulse 1.5s infinite;
+}
+
+button.glow:hover {
+  transform: scale(1.05);
+  background-color: #0056b3;
+  box-shadow: 0 0 16px #3ad1ff;
+}
+
+.result {
+  margin-top: 30px;
+  background-color: #f0fefc;
+  border-left: 6px solid #2ecc71;
+  padding: 20px;
+  border-radius: 12px;
+  animation: fadeIn 0.8s ease;
+  color: #2e7d32;
+}
+
+.result h2, .result h3 {
+  margin: 10px 0 5px;
+  color: #34495e;
+}
+
+.result p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 8px #3ad1ff; }
+  50% { box-shadow: 0 0 18px #3ad1ff; }
+  100% { box-shadow: 0 0 8px #3ad1ff; }
+}
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+  background-color: rgba(255, 255, 255, 0.1); 
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  backdrop-filter: blur(4px); 
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease;
+  font-size: 16px;
+}
+
+.footer p:hover {
+  color: #3ad1ff;
+  transition: 0.3s ease;
+}
